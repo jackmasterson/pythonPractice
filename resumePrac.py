@@ -47,8 +47,6 @@ def typeIt():
 
 	types = ['Work', 'Extra']
 	for typed in types:
-		#print(typed)
-		#print(data[typed])
 
 		if typed == 'Work':
 			workHeader = doc.add_heading('Work Experience:', 2)
@@ -58,28 +56,60 @@ def typeIt():
 	
 
 		orgs = list(data[typed].keys())
-		#print(orgs)
+
 		for org in orgs:
-		#	print(org)
-		#	print(data[typed][org])
+
 			skills = data[typed][org]['skills']
 			dates = data[typed][org]['dates']
 			title = data[typed][org]['title']
 
-			#print(skills)
 			print(dates)
-			#print(title)
-
 	
 			newOrg = doc.add_paragraph()
 			newOrg.add_run(org).bold = True
 			newOrg.style = 'NoSpacing'
-			newOrg.add_run('\t\t\t\t\t\t' + dates)
+			newOrg.add_run('\t\t\t\t\t\t' + dates).italic = True
 			
 			for skill in skills:
 				newList = doc.add_paragraph(skill, style='ListBullet2')
 
+		education()
 
+def education():
+
+	doc.add_heading('Education:', 2)
+	
+	edu = data['Edu']
+	school = data['Edu']['School']
+	eduHead = doc.add_paragraph()
+	eduHead.add_run(school)
+	eduHead.style = 'Normal'
+	eduHead.runs[0].bold = True
+
+	dates = edu['Dates']
+
+	eduHead.add_run('\t\t\t\t\t\t\t\t' + dates).italic = True
+
+	deg = edu['DegreeType']
+	eduHead.runs[1].add_break()
+	eduHead.add_run(deg)
+	
+	degIn = edu['DegreeField']
+	eduHead.add_run(', ' + degIn)
+	honors = edu['Honors']
+
+	if honors == '':
+		eduHead.add_run('')
+	else:
+		eduHead.add_run('\t\t\t\t\t\t\t\t\t' + '[' + honors + 
+			']').italic = True
+	
+	gpa = edu['GPA']
+	eduHead.runs[4].add_break()
+	if gpa == '':
+		eduHead.add_run()
+	else:
+		eduHead.add_run('GPA: ' + gpa)
 			
 
 
