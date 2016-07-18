@@ -29,9 +29,10 @@ while True:
 			if lastJob == 'done':
 				break
 			else:
-				resInfo[nextSect][lastJob] = {'skills' : []}
+				resInfo[nextSect][lastJob] = {'skills' : [], 'dates': []}
 
 				skills = resInfo[nextSect][lastJob]['skills']
+				dates = resInfo[nextSect][lastJob]['dates']
 				
 				print('What did you learn there? Add skills one at '+
 				'a time by hitting enter. Enter \'done\' when finished.')		
@@ -43,9 +44,19 @@ while True:
 						break
 					else:
 						skills.append(skill)
-				print(skills)
+					continue
 
-				continue
+				print('Months/Years worked there? done to finish')
+
+				
+				date = input()
+				if date == 'done':
+					break
+				else:
+					dates.append(date)
+				
+
+
 print(resInfo)
 		
 
