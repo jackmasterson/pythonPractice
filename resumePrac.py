@@ -79,46 +79,54 @@ def workExp():
 		nextSect = input()
 
 		if nextSect == 'Work':
-			workHead = doc.add_heading('Work Experience:', 2)
+			workHeader = doc.add_heading('Work Experience:', 2)
+			workHead = doc.add_paragraph()
+			
+
 		elif nextSect == 'Extra':
-			workHead = doc.add_heading('Extracurriculars:', 2)
+			workHeader = doc.add_heading('Extracurriculars:', 2)
+			workHead = doc.add_paragraph()
+			
 		elif nextSect == 'done':
 			break
 
 		while True:
 			print('Add your next most recent item name.')
 			lastJob = input()
+
+
 			workHead.add_run(lastJob)
-			workHead.style = 'NoSpacing'
+	
 			workHead.runs[0].bold = True
 
-			print('What were the dates worked/participated?')
-			lastDates = input()
-			workHead.add_run('\t\t\t\t\t' +lastDates).italic = True
+#			print('What were the dates worked/participated?')
+#			lastDates = input()
+#			workHead.add_run('\t\t\t\t\t' +lastDates).italic = True
+#			workHead.style = 'NoSpacing'
+#
+#			print('What was your title?')
+#			lastTitle = input()
+#			workHead.runs[1].add_break()
+#			workHead.add_run(lastTitle)
+#			workHead.style = 'NoSpacing'
 
-			print('What was your title?')
-			lastTitle = input()
-			workHead.runs[1].add_break()
-			workHead.add_run(lastTitle)
-			workHead.style = 'NoSpacing'
-
-			print('What skills did you learn? Enter one at a time '+
-				'followed by \'Enter\', then type done to move on.')
-			skills = []
+#			print('What skills did you learn? Enter one at a time '+
+#				'followed by \'Enter\', then type done to move on.')
+#			skills = []
 			
-			while True:
-				skill = input()
-				if skill == 'done':
-					break
-				else:
-					skills.append(skill)
-					continue
+#			while True:
+#				skill = input()
+#				if skill == 'done':
+#					break
+#				else:
+#					skills.append(skill)
+#					continue
 
-			for each in skills: 
-				listed = doc.add_paragraph(each, style='ListBullet2')
+#			for each in skills: 
+#				listed = doc.add_paragraph(each, style='ListBullet2')
 			
 			print('To add to the same section, type \'add\', '+
-				'followed by the enter key. Otherwise, click \'done\'')
+				'followed by the enter key. Otherwise, type \'done\' and hit enter')
 
 			answer = input()
 			if answer == 'add':
