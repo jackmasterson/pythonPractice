@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 #resumeWrite.py - gather data and put into a JSON to be read in resumePrac.py
-resInfo = {'Work':{}, 'Extra':{}}
+resInfo = {'Summary':{}, 'Work':{}, 'Extra':{}, 'Edu':{}}
 print(resInfo)
 
 
@@ -56,6 +56,12 @@ while True:
 					dates.append(date)
 				
 
+print('Type a two-to-three sentence blurb about what you\'re doing '+
+	' and what you\'re looking for')
+
+summary = input()
+
+resInfo['Summary'] = [summary]
 
 print(resInfo)
 		
