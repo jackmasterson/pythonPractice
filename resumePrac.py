@@ -52,10 +52,10 @@ def typeIt():
 
 		if typed == 'Work':
 			workHeader = doc.add_heading('Work Experience:', 2)
-			workHead = doc.add_paragraph()
+	
 		elif typed == 'Extra':
 			workHeader = doc.add_heading('Extracurriculars:', 2)
-			workHead = doc.add_paragraph()
+	
 
 		orgs = list(data[typed].keys())
 		#print(orgs)
@@ -71,18 +71,12 @@ def typeIt():
 			#print(title)
 
 
-			workHead.add_run(org)
-			workHead.runs[0].bold = True
-
-			workHead.add_run('\t\t\t' + dates).italic = True
-			workHead.style = 'NoSpacing'
-
+			newOrg = doc.add_paragraph(org)
+			newOrg.style = 'NoSpacing'
 			for skill in skills:
-				print(skill)
-				listed = doc.add_paragraph(skill, style='ListBullet2')
-		
-		
+				newList = doc.add_paragraph(skill, style='ListBullet2')
 
+			
 			
 
 
