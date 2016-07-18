@@ -67,16 +67,19 @@ def typeIt():
 			title = data[typed][org]['title']
 
 			#print(skills)
-			#print(dates)
+			print(dates)
 			#print(title)
 
-
-			newOrg = doc.add_paragraph(org)
+	
+			newOrg = doc.add_paragraph()
+			newOrg.add_run(org).bold = True
 			newOrg.style = 'NoSpacing'
+			newOrg.add_run('\t\t\t\t\t\t' + dates)
+			
 			for skill in skills:
 				newList = doc.add_paragraph(skill, style='ListBullet2')
 
-			
+
 			
 
 
