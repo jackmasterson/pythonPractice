@@ -4,8 +4,6 @@
 import docx
 from docx.shared import Pt
 
-
-
 doc = docx.Document()
 
 def greeting():
@@ -44,65 +42,94 @@ def nameRole():
 	phone = input()
 
 	contactSect.add_run('  |  ' + phone)
+
+
+	summary()
+
+def summary():
+	print('Write a quick blurb about yourself. What are your '+
+		'strengths, what are you looking to learn?')
+
+	summary = input()
+
+	doc.add_heading('Summary:', 2)
+	summaryInfo = doc.add_paragraph()
+	summaryInfo.add_run(summary)
+	summaryInfo.runs[0].style = 'SubtleEmphasis'
 	
-
-	print('What\'s your linkedIn url?')
-	linked = input()
-	contactSect.add_run('  |  ' + linked)
-
-
 	workExp()
 
 def workExp():
-	doc.add_heading('Work Experience:', 2)
-	print('')
-	print('What\'s the most recent Employer you had?')
+
+	
+	
+	
+	
+
+	
 	while True:
-		print('Add the next most recent Employer name.')
-		lastJob = input()
-		workHead = doc.add_paragraph()
-		workHead.add_run(lastJob)
-		workHead.style = 'NoSpacing'
-		workHead.runs[0].bold = True
 
-		print('What were the dates worked?')
-		lastDates = input()
-		workHead.add_run('\t\t\t\t\t' +lastDates).italic = True
+		print('')
 
-		print('What was your title?')
-		lastTitle = input()
-		workHead.runs[1].add_break()
-		workHead.add_run(lastTitle)
-		workHead.style = 'NoSpacing'
+		print('Type \'Work\' to add Work Experience. Type '+
+			'\'Extra\' to add Extracurriculars. ' +
+			'Type \'done\' if finished entering both '+
+			'work and extracurricular info.')
 
-		print('What skills did you learn? Enter one at a time '+
-			'followed by \'Enter\', then type done to move on.')
-		skills = []
-		
-		while True:
-			skill = input()
-			if skill == 'done':
-				break
-			else:
-				skills.append(skill)
-				continue
+		nextSect = input()
 
-		for each in skills: 
-			listed = doc.add_paragraph(each, style='ListBullet2')
-		
-		print('To add another work experience, type \'add\' followed by' +
-			' the enter key. Otherwise, type \'done\'')
-
-		answer = input()
-		if answer == 'add':
-			continue
-		elif answer == 'done':
+		if nextSect == 'Work':
+			workHead = doc.add_heading('Work Experience:', 2)
+		elif nextSect == 'Extra':
+			workHead = doc.add_heading('Extracurriculars:', 2)
+		elif nextSect == 'done':
 			break
 
-	#education()
+		while True:
+			print('Add your next most recent item name.')
+			lastJob = input()
+			workHead.add_run(lastJob)
+			workHead.style = 'NoSpacing'
+			workHead.runs[0].bold = True
+
+			print('What were the dates worked/participated?')
+			lastDates = input()
+			workHead.add_run('\t\t\t\t\t' +lastDates).italic = True
+
+			print('What was your title?')
+			lastTitle = input()
+			workHead.runs[1].add_break()
+			workHead.add_run(lastTitle)
+			workHead.style = 'NoSpacing'
+
+			print('What skills did you learn? Enter one at a time '+
+				'followed by \'Enter\', then type done to move on.')
+			skills = []
+			
+			while True:
+				skill = input()
+				if skill == 'done':
+					break
+				else:
+					skills.append(skill)
+					continue
+
+			for each in skills: 
+				listed = doc.add_paragraph(each, style='ListBullet2')
+			
+			print('To add to the same section, type \'add\', '+
+				'followed by the enter key. Otherwise, click \'done\'')
+
+			answer = input()
+			if answer == 'add':
+				continue
+			elif answer == 'done':
+				break
+
+#	education()
 
 def education():
-	doc.add_heading('Education:', 1)
+	doc.add_heading('Education:', 2)
 	print('The following will ask about your education.')
 
 	while True:
@@ -155,8 +182,8 @@ def education():
 
 
 #greeting()
-nameRole()
-#workExp()
+#nameRole()
+workExp()
 #education()
 #contact()
 
