@@ -62,8 +62,6 @@ def typeIt():
 			skills = data[typed][org]['skills']
 			dates = data[typed][org]['dates']
 			title = data[typed][org]['title']
-
-			print(dates)
 	
 			newOrg = doc.add_paragraph()
 			newOrg.add_run(org).bold = True
@@ -116,11 +114,6 @@ def education():
 
 	
 greeting()
-#nameRole()
-#typeIt()
-#education()
-#contact()
-
-
-
 doc.save('resumeTemplate.docx')
+
+print('Okay, all set. Open it up!')

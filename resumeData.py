@@ -1,27 +1,48 @@
 allData = {'Edu': {'Dates': '2009 - 2013',
          'DegreeField': 'English',
-         'DegreeType': 'BS',
+         'DegreeType': 'B.S.',
          'GPA': '3.646',
          'Honors': 'cum laude',
          'School': 'Boston College'},
- 'Email': 'jack@jack.com',
- 'Extra': {'Sloan Kettering': {'dates': 'Oct 2012- August 2006',
-                               'skills': ['Stuff',
-                                          'is ',
-                                          'great',
-                                          'thats',
-                                          'awesome'],
-                               'title': 'volunteer'},
-           'Stupid Stuff': {'dates': 'Jan 2005 - March 2004',
-                            'skills': ['laughing', 'is', 'believing'],
-                            'title': 'Volunteer'}},
- 'Name': 'Jack C M',
- 'Phone': '9083493020',
- 'Role': 'We Dev',
- 'Summary': 'i am great you are swell',
- 'Work': {'Shawmut': {'dates': 'August - May',
-                      'skills': ['loving', 'living', 'caring'],
-                      'title': 'Jr Mktg Coord'},
-          'Workman': {'dates': 'Jan - Feb',
-                      'skills': ['great', 'stuff', 'jack'],
-                      'title': 'Publicity Asst'}}}
+ 'Email': 'jackmasterson5@gmail.com',
+ 'Extra': {'Sea Girt Recreation': {'dates': '',
+                                   'skills': ['Maintain order with children',
+                                              'Ensure sports equipment was '
+                                              'ready-to-use each day',
+                                              'Cooperate with needs of '
+                                              'parents'],
+                                   'title': 'Counselor'},
+           'Sloan Kettering': {'dates': '',
+                               'skills': ['Ensure ER is clean and ready for '
+                                          'use',
+                                          'Maintain patient comfort while '
+                                          'administering care',
+                                          'Detail operation to accompanying '
+                                          'family members'],
+                               'title': 'Volunteer'}},
+ 'Name': 'Jack C Masterson',
+ 'Phone': '(908)433-0178',
+ 'Role': 'Web Developer',
+ 'Summary': 'Web developer with a passion for problem solving, thinking '
+            'critically, and getting the job done. Looking to learn more about '
+            'the tech side of business.',
+ 'Work': {'Shawmut Design and Construction': {'dates': '',
+                                              'skills': ['Copyedit internal '
+                                                         'documents',
+                                                         'Copywrite external '
+                                                         'marketing materials '
+                                                         'sent to prospective '
+                                                         'clients',
+                                                         'Initiate rewrite of '
+                                                         'Business Development '
+                                                         'marketing template'],
+                                              'title': 'Junior Marketing '
+                                                       'Coordinator'},
+          'Workman': {'dates': '',
+                      'skills': ['Compose press releases highlighting '
+                                 'attribtues of titles',
+                                 'Engage with media outlets to increase book '
+                                 'publicity',
+                                 'Ensure authors remained in the loop on '
+                                 'publicity efforts'],
+                      'title': 'Publicity and Marketing Assistant'}}}
