@@ -66,12 +66,12 @@ def typeIt():
 			newOrg = doc.add_paragraph()
 			newOrg.add_run(org).bold = True
 			newOrg.style = 'NoSpacing'
-			newOrg.add_run('\t\t\t\t\t\t' + dates).italic = True
+			newOrg.add_run('\t\t\t\t\t\t' + dates[0]).italic = True
 			
 			for skill in skills:
 				newList = doc.add_paragraph(skill, style='ListBullet2')
 
-		education()
+	education()
 
 def education():
 

@@ -100,7 +100,7 @@ while True:
 			if lastJob == 'done':
 				break
 			else:
-				resInfo[nextSect][lastJob] = {'title': '', 'skills' : [], 'dates': ''}
+				resInfo[nextSect][lastJob] = {'title': '', 'skills' : [], 'dates': []}
 
 				skills = resInfo[nextSect][lastJob]['skills']
 				dates = resInfo[nextSect][lastJob]['dates']
@@ -123,7 +123,7 @@ while True:
 				if date == 'done':
 					break
 				else:
-					dates = date
+					dates.append(date)
 
 				print('What was your title?')
 				title = input()
