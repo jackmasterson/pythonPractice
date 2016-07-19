@@ -6,6 +6,7 @@ from docx.shared import Pt
 
 doc = docx.Document()
 data = resumeData.allData
+print(data)
 
 def greeting():
 	print('Formatting...')

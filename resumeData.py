@@ -1,3 +1,9 @@
+#! /usr/bin/env python3
+# - trying to get this information to the localhost to be
+# used on the front end
+#import requests
+
+
 allData = {'Edu': {'Dates': '2009 - 2013',
          'DegreeField': 'English',
          'DegreeType': 'B.S.',
@@ -46,3 +52,16 @@ allData = {'Edu': {'Dates': '2009 - 2013',
                                  'Ensure authors remained in the loop on '
                                  'publicity efforts'],
                       'title': 'Publicity and Marketing Assistant'}}}
+
+#url='http://localhost:3000'
+#r = requests.post(url, data=allData)
+
+#r = requests.get('http://jack-masterson.com')
+
+#print(r.text)
+
+
+
+
+
+
